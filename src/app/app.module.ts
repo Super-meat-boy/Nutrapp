@@ -20,7 +20,8 @@ import {NavBarComponent} from './nav-bar/nav-bar.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    NavBarComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
