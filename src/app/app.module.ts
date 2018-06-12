@@ -4,13 +4,29 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LayoutModule} from '@angular/cdk/layout';
-import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule
+} from '@angular/material';
+
 import {NavBarComponent} from './nav-bar/nav-bar.component';
+import {ContactUsComponent} from './contact-us/contact-us.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    ContactUsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -21,6 +37,13 @@ import {NavBarComponent} from './nav-bar/nav-bar.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatSidenavModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

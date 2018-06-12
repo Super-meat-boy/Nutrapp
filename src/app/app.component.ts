@@ -7,4 +7,5 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'WELCOME TO NUTRAPP';
+  title2 = 'NOUS CONTACTER';
 }

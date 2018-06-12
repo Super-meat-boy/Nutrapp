@@ -1,13 +1,15 @@
-.sidenav-container {
+/*mat-sidenav-container {
   height: 50%;
 }
 
-.sidenav {
+mat-nav-list {
   width: 220px;
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
 }
 
-.sidenav-container {
+mat-sidenav-container {
   justify-content: center;
 }
 
+mat-sidenav-content {
+}*/
