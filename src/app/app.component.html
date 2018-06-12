@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <mat-toolbar color="primary">
+<div style="text-align:center" [style.minHeight.vh]= "100" fxLayout="column" fxLayoutAlign="space-between">
+  
     <button
       type="button"
       aria-label="Toggle sidenav"
@@ -10,7 +10,7 @@
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
 
-  </mat-toolbar>
+
   <h1>
     {{ title }}!
   </h1>

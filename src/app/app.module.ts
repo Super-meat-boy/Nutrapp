@@ -7,6 +7,7 @@ import {LayoutModule} from '@angular/cdk/layout';
 import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import { FooterComponent } from './footer/footer.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    FlexLayoutModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
