@@ -19,9 +19,8 @@ import {
 import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-
 import {FooterComponent} from './footer/footer.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -40,12 +39,14 @@ import {FooterComponent} from './footer/footer.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
     MatCheckboxModule,
     FormsModule,
     MatSidenavModule,
+
 
   ],
   providers: [],
