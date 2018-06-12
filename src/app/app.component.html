@@ -1,9 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  <mat-toolbar color="primary">
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+
+  </mat-toolbar>
   <h1>
     {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo"
+  <img width="160" alt="Angular Logo"
        src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
 </div>
 
