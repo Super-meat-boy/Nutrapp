@@ -25,6 +25,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { ListAlimentComponent } from './list-aliment/list-aliment.component';
+import { GlycemicLoadComponent } from './glycemic-load/glycemic-load.component';
+import { HistoryMealsComponent } from './history-meals/history-meals.component';
 
 
 @NgModule({
@@ -34,7 +37,13 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 
     ContactUsComponent,
 
-    FooterComponent
+    FooterComponent,
+
+    ListAlimentComponent,
+
+    GlycemicLoadComponent,
+
+    HistoryMealsComponent
 
   ],
   imports: [
