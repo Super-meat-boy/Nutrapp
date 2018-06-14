@@ -24,6 +24,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {RouterModule, Routes} from '@angular/router';
 import {MyProfileComponent} from './my-profile/my-profile.component';
 import {FavoriteMealsComponent} from './favorite-meals/favorite-meals.component';
+import {GlycemicLoadComponent} from './glycemic-load/glycemic-load.component';
+import {ListAlimentComponent} from './list-aliment/list-aliment.component';
+import {HistoryMealsComponent} from './history-meals/history-meals.component';
+
 
 const routes: Routes = [
   {path: 'contact', component: ContactUsComponent},
@@ -43,6 +47,10 @@ const routes: Routes = [
     FooterComponent,
     MyProfileComponent,
     FavoriteMealsComponent,
+    ListAlimentComponent,
+    GlycemicLoadComponent,
+    HistoryMealsComponent
+
   ],
   imports: [
     BrowserModule,
