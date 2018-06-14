@@ -1,12 +1,7 @@
-.example-container {
-  justify-content: right;
-}
-
 mat-form-field {
   width: 600px;
 }
 
 .contactUsText {
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  padding-top: 5em;
 }
