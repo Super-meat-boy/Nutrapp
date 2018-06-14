@@ -31,7 +31,7 @@ import { HistoryMealsComponent } from './history-meals/history-meals.component';
     AppComponent,
     NavBarComponent,
     ContactUsComponent,
-<<<<<<< HEAD
+
 
     FooterComponent,
 
@@ -41,9 +41,9 @@ import { HistoryMealsComponent } from './history-meals/history-meals.component';
 
     HistoryMealsComponent
 
-=======
+
     FooterComponent
->>>>>>> ae4e1bd3b7746d6fe80829db65dac6b4abc4acae
+
   ],
   imports: [
     BrowserModule,
