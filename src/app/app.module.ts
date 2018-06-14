@@ -4,6 +4,17 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LayoutModule} from '@angular/cdk/layout';
+import {NavBarComponent} from './nav-bar/nav-bar.component';
+import {ContactUsComponent} from './contact-us/contact-us.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FooterComponent} from './footer/footer.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {RouterModule, Routes} from '@angular/router';
+import {MyProfileComponent} from './my-profile/my-profile.component';
+import {FavoriteMealsComponent} from './favorite-meals/favorite-meals.component';
+import {GlycemicLoadComponent} from './glycemic-load/glycemic-load.component';
+import {ListAlimentComponent} from './list-aliment/list-aliment.component';
+import {HistoryMealsComponent} from './history-meals/history-meals.component';
 
 import {
   MatButtonModule,
@@ -16,17 +27,6 @@ import {
   MatToolbarModule,
 } from '@angular/material';
 
-import {NavBarComponent} from './nav-bar/nav-bar.component';
-import {ContactUsComponent} from './contact-us/contact-us.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {FooterComponent} from './footer/footer.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {RouterModule, Routes} from '@angular/router';
-import {MyProfileComponent} from './my-profile/my-profile.component';
-import {FavoriteMealsComponent} from './favorite-meals/favorite-meals.component';
-import {GlycemicLoadComponent} from './glycemic-load/glycemic-load.component';
-import {ListAlimentComponent} from './list-aliment/list-aliment.component';
-import {HistoryMealsComponent} from './history-meals/history-meals.component';
 
 
 const routes: Routes = [
