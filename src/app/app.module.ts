@@ -17,13 +17,9 @@ import {
 } from '@angular/material';
 
 import {NavBarComponent} from './nav-bar/nav-bar.component';
-
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-
-import { FooterComponent } from './footer/footer.component';
-
+import {FooterComponent} from './footer/footer.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { ListAlimentComponent } from './list-aliment/list-aliment.component';
 import { GlycemicLoadComponent } from './glycemic-load/glycemic-load.component';
@@ -34,8 +30,8 @@ import { HistoryMealsComponent } from './history-meals/history-meals.component';
   declarations: [
     AppComponent,
     NavBarComponent,
-
     ContactUsComponent,
+<<<<<<< HEAD
 
     FooterComponent,
 
@@ -45,6 +41,9 @@ import { HistoryMealsComponent } from './history-meals/history-meals.component';
 
     HistoryMealsComponent
 
+=======
+    FooterComponent
+>>>>>>> ae4e1bd3b7746d6fe80829db65dac6b4abc4acae
   ],
   imports: [
     BrowserModule,
@@ -55,9 +54,7 @@ import { HistoryMealsComponent } from './history-meals/history-meals.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-
     FlexLayoutModule,
-
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
