@@ -35,7 +35,7 @@ const routes: Routes = [
   {path: 'favorite-meals', component: FavoriteMealsComponent},
   {path: 'glycemic-load', component: GlycemicLoadComponent},
   {path: 'history-meals', component: HistoryMealsComponent},
-  {path: 'list-aliment', component: ListAlilmentComponent},
+  {path: 'list-aliment', component: ListAlimentComponent},
 ];
 
 
