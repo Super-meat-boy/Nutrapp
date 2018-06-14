@@ -44,24 +44,18 @@ const routes: Routes = [
     AppComponent,
     NavBarComponent,
     ContactUsComponent,
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 5020f97edab19010a195f5a7a41f39c061cc3a88
+
     FooterComponent,
     MyProfileComponent,
     FavoriteMealsComponent,
     ListAlimentComponent,
     GlycemicLoadComponent,
-    HistoryMealsComponent
+    HistoryMealsComponent,
 
-<<<<<<< HEAD
 
-    FooterComponent
 
-=======
->>>>>>> 5020f97edab19010a195f5a7a41f39c061cc3a88
   ],
   imports: [
     BrowserModule,

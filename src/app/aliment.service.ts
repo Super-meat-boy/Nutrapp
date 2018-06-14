@@ -1,6 +1,5 @@
-/*
 import { Injectable } from '@angular/core';
-
+import { Aliment } from './aliment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +7,11 @@ import { Injectable } from '@angular/core';
 export class AlimentService {
 
   constructor() {
-
+    selectedAliment: Aliment;
 
 }
 
-menuPrincipal: Menu[] = [
+listeAliment: Aliment[] = [
  {
    'id': 0,
    'name': 'patate',
@@ -46,4 +45,3 @@ menuPrincipal: Menu[] = [
 ];
 
 }
-*/
