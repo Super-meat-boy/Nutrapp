@@ -26,7 +26,7 @@ import {
   MatSidenavModule,
   MatToolbarModule,
 } from '@angular/material';
-
+import {AuthentificationComponent} from './authentification/authentification.component';
 
 
 const routes: Routes = [
@@ -36,6 +36,7 @@ const routes: Routes = [
   {path: 'glycemic-load', component: GlycemicLoadComponent},
   {path: 'history-meals', component: HistoryMealsComponent},
   {path: 'list-aliment', component: ListAlimentComponent},
+  {path: '', component: AuthentificationComponent},
 ];
 
 
@@ -49,7 +50,8 @@ const routes: Routes = [
     FavoriteMealsComponent,
     ListAlimentComponent,
     GlycemicLoadComponent,
-    HistoryMealsComponent
+    HistoryMealsComponent,
+    AuthentificationComponent,
 
   ],
   imports: [
