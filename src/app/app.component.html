@@ -1,16 +1,20 @@
+<app-nav-bar></app-nav-bar>
 <!--The content below is only a placeholder and can be replaced.-->
 <app-nav-bar></app-nav-bar>
 <div style="text-align:center" [style.minHeight.vh]="100" fxLayout="column" fxLayoutAlign="space-between">
+
   <button
-      type="button"
-      aria-label="Toggle sidenav"
-      mat-icon-button
-      (click)="drawer.toggle()"
-      *ngIf="isHandset$ | async">
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="isHandset$ | async">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+
 </div>
 <img width="160" alt="Nutrapp_logo"
      src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
+
 <app-footer></app-footer>
 
