@@ -3,5 +3,3 @@ export interface Aliment {
     name: string;
     glycemie: number;
 }
-
-}

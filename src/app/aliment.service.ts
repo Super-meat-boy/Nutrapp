@@ -6,41 +6,39 @@ import { Aliment } from './aliment';
 })
 export class AlimentService {
 
-  constructor() {
-    selectedAliment: Aliment;
-
-}
+  selectedAliment: Aliment;
+  constructor() {}
 
 listeAliment: Aliment[] = [
  {
    'id': 0,
    'name': 'patate',
-   'glycemie': '12',
+   'glycemie': 12,
  },
  {
    'id': 1,
    'name': 'patate',
-   'glycemie': '12',
+   'glycemie': 12,
  },
  {
    'id': 2,
    'name': 'patate',
-   'glycemie': '12',
+   'glycemie': 12,
  },
  {
  'id': 3,
  'name': 'courge',
- 'glycemie': '15',
+ 'glycemie': 15,
 },
 {
-'id': 4,
+'id': 0,
 'name': 'ananas',
-'glycemie': '03',
+'glycemie': 3,
 },
 {
 'id': 5,
 'name': 'patate',
-'glycemie': '34',
+'glycemie': 34,
 }
 ];
 

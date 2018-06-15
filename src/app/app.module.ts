@@ -25,6 +25,8 @@ import {
   MatListModule,
   MatSidenavModule,
   MatToolbarModule,
+  MatChipsModule,
+  MatAutocompleteModule
 } from '@angular/material';
 
 
@@ -45,16 +47,12 @@ const routes: Routes = [
     NavBarComponent,
     ContactUsComponent,
 
-
-
     FooterComponent,
     MyProfileComponent,
     FavoriteMealsComponent,
     ListAlimentComponent,
     GlycemicLoadComponent,
     HistoryMealsComponent,
-
-
 
   ],
   imports: [
@@ -73,9 +71,9 @@ const routes: Routes = [
     MatCheckboxModule,
     FormsModule,
     MatSidenavModule,
+    MatChipsModule,
+    MatAutocompleteModule,
     RouterModule.forRoot(routes),
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

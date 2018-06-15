@@ -1,19 +1,29 @@
-<<<<<<< HEAD
-<p>
-  list-aliment works!
-</p>
 
-<div class="listAliment">
+<mat-form-field class="listAliment">
+  <!-- <mat-chip-list #listAliment>
+    <mat-chip
+      *ngFor="let aliment of aliment"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(aliment)">
+      {{fruit}}
+      <mat-icon matAlimentRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip> -->
+    <input matInput
+      placeholder="New aliment..."
+      #alimentInput
+      [formControl]="alimentCtrl"
+      [matAutocomplete]="auto"
+    />
+  <!-- </mat-chip-list> -->
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let aliment of filteredAliment | async" [value]="aliment">
+      {{ aliment.name }}
 
-<h1 class="example-container">
+    <mat-checkbox>je coche ou décoche</mat-checkbox>
 
-</div>
-=======
+  </ng-container>
 
-  <h1>
-    Liste des Aliments
-   </h1>
-   <img width="160" alt="Angular Logo"
-        src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
- 
->>>>>>> 2bf4ffbce9ea620010a465c1a98b1428c932af50
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
