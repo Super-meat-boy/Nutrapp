@@ -54,10 +54,9 @@ const routes: Routes = [
     ListAlimentComponent,
     GlycemicLoadComponent,
     HistoryMealsComponent,
-<<<<<<< HEAD
-=======
+
     AuthentificationComponent,
->>>>>>> e442dcd7fe87fe2d2896ded5942db90388707931
+
 
   ],
   imports: [

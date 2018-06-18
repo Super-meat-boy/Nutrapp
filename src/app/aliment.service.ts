@@ -17,13 +17,13 @@ listeAliment: Aliment[] = [
  },
  {
    'id': 1,
-   'name': 'patate',
-   'glycemie': 12,
+   'name': 'celeri',
+   'glycemie': 13,
  },
  {
    'id': 2,
-   'name': 'patate',
-   'glycemie': 12,
+   'name': 'pomme',
+   'glycemie': 24,
  },
  {
  'id': 3,
@@ -37,7 +37,7 @@ listeAliment: Aliment[] = [
 },
 {
 'id': 5,
-'name': 'patate',
+'name': 'banane',
 'glycemie': 34,
 }
 ];
