@@ -29,10 +29,10 @@
 </mat-form-field>
 
 
-<mat-card class="example-card">
+<mat-card class="example-card" *ngIf="selectedAliment != null">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>La pomme de terre</mat-card-title>
+    <mat-card-title></mat-card-title>
   </mat-card-header>
   <img mat-card-image src="http://lavieagricole.ca/media/image_article/patates.jpg" alt="Photo of potatoes">
     <mat-card-subtitle>Les apports nutritionnels de l'aliment sélectionné sont: </mat-card-subtitle>

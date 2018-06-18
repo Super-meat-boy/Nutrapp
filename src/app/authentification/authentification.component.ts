@@ -11,7 +11,7 @@ import {ErrorStateMatcher} from '@angular/material';
 
 export class AuthentificationComponent implements OnInit {
 
-
+  hide = true;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,]);
