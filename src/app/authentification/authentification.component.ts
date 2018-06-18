@@ -8,14 +8,13 @@ import {ErrorStateMatcher} from '@angular/material';
   templateUrl: './authentification.component.html',
   styleUrls: ['./authentification.component.css']
 })
+
 export class AuthentificationComponent implements OnInit {
 
 
   emailFormControl = new FormControl('', [
     Validators.required,
-    Validators.email,
-    
-  ]);
+    Validators.email,]);
   matcher = new MyErrorStateMatcher();
 
 
@@ -35,4 +34,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 
 
 }
+
+
 

@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LayoutModule} from '@angular/cdk/layout';
@@ -15,20 +14,19 @@ import {FavoriteMealsComponent} from './favorite-meals/favorite-meals.component'
 import {GlycemicLoadComponent} from './glycemic-load/glycemic-load.component';
 import {ListAlimentComponent} from './list-aliment/list-aliment.component';
 import {HistoryMealsComponent} from './history-meals/history-meals.component';
-
+import {AuthentificationComponent} from './authentification/authentification.component';
 import {
+  MatAutocompleteModule,
   MatButtonModule,
   MatCheckboxModule,
+  MatChipsModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
   MatSidenavModule,
   MatToolbarModule,
-  MatChipsModule,
-  MatAutocompleteModule
 } from '@angular/material';
-import {AuthentificationComponent} from './authentification/authentification.component';
 
 
 const routes: Routes = [
@@ -47,17 +45,14 @@ const routes: Routes = [
     AppComponent,
     NavBarComponent,
     ContactUsComponent,
-
     FooterComponent,
     MyProfileComponent,
     FavoriteMealsComponent,
     ListAlimentComponent,
     GlycemicLoadComponent,
     HistoryMealsComponent,
-<<<<<<< HEAD
-=======
     AuthentificationComponent,
->>>>>>> e442dcd7fe87fe2d2896ded5942db90388707931
+
 
   ],
   imports: [
