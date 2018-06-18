@@ -41,6 +41,8 @@ export class ListAlimentComponent implements OnInit {
         map((aliment) => (aliment && (typeof aliment === "object")) ? aliment.name : aliment),
         map((alimentName) => (alimentName) ? this.filter(alimentName) : this.aliments.slice())
 
+
+
       );
   }
 
@@ -58,4 +60,6 @@ export class ListAlimentComponent implements OnInit {
   }
   ngOnInit() {
   }
+
+
 }

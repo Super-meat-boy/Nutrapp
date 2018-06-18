@@ -27,7 +27,7 @@ import {
   MatSidenavModule,
   MatToolbarModule,
 } from '@angular/material';
-
+import {MatCardModule} from '@angular/material/card';
 
 const routes: Routes = [
   {path: 'contact', component: ContactUsComponent},
@@ -74,6 +74,7 @@ const routes: Routes = [
     MatChipsModule,
     MatAutocompleteModule,
     RouterModule.forRoot(routes),
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
