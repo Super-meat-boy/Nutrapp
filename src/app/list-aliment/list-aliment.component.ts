@@ -41,34 +41,8 @@ export class ListAlimentComponent implements OnInit {
         map((aliment) => (aliment && (typeof aliment === "object")) ? aliment.name : aliment),
         map((alimentName) => (alimentName) ? this.filter(alimentName) : this.aliments.slice())
 
-        
       );
   }
-
-  // add(event: MatChipInputEvent): void {
-  //   const input = event.input;
-  //   const value = event.value;
-  //
-  //   // Add our aliment
-  //   if ((value || '').trim()) {
-  //     this.aliments.push(value.trim());
-  //   }
-  //
-  //   // Reset the input value
-  //   if (input) {
-  //     input.value = '';
-  //   }
-  //
-  //   this.alimentCtrl.setValue(null);
-  // }
-  //
-  // remove(aliment: any): void {
-  //   const index = this.aliments.indexOf(aliment);
-  //
-  //   if (index >= 0) {
-  //     this.aliments.splice(index, 1);
-  //   }
-  // }
 
   filter(alimentName: string) {
     console.log(this.aliments);
