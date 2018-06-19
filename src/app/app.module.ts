@@ -24,6 +24,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
+  MatSelectModule,
   MatSidenavModule,
   MatToolbarModule,
 } from '@angular/material';
@@ -75,6 +76,7 @@ const routes: Routes = [
     MatAutocompleteModule,
     RouterModule.forRoot(routes),
     MatCardModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

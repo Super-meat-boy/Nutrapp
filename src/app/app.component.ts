@@ -1,4 +1,3 @@
-
 import {Component} from '@angular/core';
 
 @Component({
@@ -9,4 +8,5 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'WELCOME TO NUTRAPP';
   title2 = 'NOUS CONTACTER';
+  aliment = ['banane', 'kiwi', 'steack', 'poivron'];
 }

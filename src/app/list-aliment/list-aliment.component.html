@@ -1,38 +1,56 @@
-<mat-form-field class="listAliment">
-  <!-- <mat-chip-list #listAliment>
-    <mat-chip
-      *ngFor="let aliment of aliment"
-      [selectable]="selectable"
-      [removable]="removable"
-      (removed)="remove(aliment)">
-      {{fruit}}
-      <mat-icon matAlimentRemove *ngIf="removable">cancel</mat-icon>
-    </mat-chip> -->
-    <input matInput
-      placeholder="New aliment..."
-      #alimentInput
-      #alimentGlycemieInput
+<!--<mat-form-field class="listAliment">
 
-      [formControl]="alimentCtrl"
-      [matAutocomplete]="auto"
-    />
-  <!-- </mat-chip-list> -->
+    <input matInput
+           placeholder="New aliment..."
+           #alimentInput
+           #alimentGlycemieInput
+
+           [formControl]="alimentCtrl"
+           [matAutocomplete]="auto"
+           type="text"
+           (change)="">
+
 
   <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let aliment of filteredAliment | async" [value]="aliment.name">
+    <mat-option *ngFor="let aliment of filteredAliment; let var = selectedAliment  | async " [value]="aliment.name">
       {{aliment.name}}
     </mat-option>
 
 
   </mat-autocomplete>
 
-</mat-form-field>
+</mat-form-field>-->
 
 
-<mat-card class="example-card" *ngIf="selectedAliment != null">
+<!--<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="formulaire"
+           [matAutocomplete]="auto" [(ngModel)]="selectedName">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let aliment of alimentService.aliment" [value]="aliment.id">
+        {{aliment.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>-->
+
+<form>
+  <mat-form-field>
+    <mat-select placeholder="Select some food" [(ngModel)]="selectedName" name="food">
+      <mat-option *ngFor="let aliment of alimentService.aliment" [value]="aliment.id">
+        {{aliment.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <p> Selected value: {{selectedName}} </p>
+</form>
+
+
+<mat-card class="example-card" *ngIf="selectedName!==null">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title></mat-card-title>
+    <mat-card-title>TEST</mat-card-title>
   </mat-card-header>
   <img mat-card-image src="http://lavieagricole.ca/media/image_article/patates.jpg" alt="Photo of potatoes">
     <mat-card-subtitle>Les apports nutritionnels de l'aliment sélectionné sont: </mat-card-subtitle>
