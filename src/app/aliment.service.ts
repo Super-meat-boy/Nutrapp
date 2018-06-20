@@ -23,7 +23,7 @@ listeAliment: Aliment[] = [
  {
    'id': 2,
    'name': 'pomme',
-   'glycemie': 24,
+   'glycemie': 2,
  },
  {
  'id': 3,
@@ -37,9 +37,15 @@ listeAliment: Aliment[] = [
 },
 {
 'id': 5,
-'name': 'banane',
+'name': 'patate',
 'glycemie': 34,
 }
 ];
+
+aliments = [
+  'patate',
+  'fraise',
+  'kiwi'
+ ];
 
 }

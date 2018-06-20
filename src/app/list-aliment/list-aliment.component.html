@@ -1,13 +1,20 @@
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+
+    <input type="text" placeholder="Saisir l'aliment ici:" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" (ngModelChange)="clearFilter()">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let aliment of alimentService.listeAliment" [value]="aliment.name">
+        name ={{aliment.name}};
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+<p>Consultation le: {{lastUpdate | date: 'short'}}</p>
+
+<!--
 <mat-form-field class="listAliment">
-  <!-- <mat-chip-list #listAliment>
-    <mat-chip
-      *ngFor="let aliment of aliment"
-      [selectable]="selectable"
-      [removable]="removable"
-      (removed)="remove(aliment)">
-      {{fruit}}
-      <mat-icon matAlimentRemove *ngIf="removable">cancel</mat-icon>
-    </mat-chip> -->
+
     <input matInput
       placeholder="New aliment..."
       #alimentInput
@@ -16,10 +23,11 @@
       [formControl]="alimentCtrl"
       [matAutocomplete]="auto"/>
   <!-- </mat-chip-list> -->
-
+  <!--
   <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let aliment of filteredAliment | async" [value]="aliment.name">
-      {{aliment.name}}
+    <mat-option *ngFor="let aliment of filteredAliment | async" [value]= "aliment.name">
+  {{aliment.name}};
+
     </mat-option>
 
 
@@ -41,3 +49,4 @@ Charge Glycémique
   <mat-card-actions>
   </mat-card-actions>
 </mat-card>
+-->
