@@ -6,7 +6,7 @@ import {Aliment} from './aliment';
 })
 export class AlimentService {
 
-
+  selectedAliment: Aliment;
   listeAliment: Aliment[] = [
  {
    'id': 0,

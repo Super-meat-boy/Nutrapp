@@ -9,8 +9,7 @@
        <input type="text"  #alim placeholder="Aliment">
        <input type="text" #ig  placeholder="Indice Glycemique">
        <input type="text" #grammage placeholder="Grammage">
-       <input type="submit" value="Ajouter un Aliment" (click)="add( alim.value , ig.value, grammage.value)" >
-    <input type="button" name="reset_form" value="Reset" (click)="resetCharge()">
+    <input type="submit" value="Ajouter un Aliment" (click)="add( alim.value , ig.value, grammage.value)">
   </form>
 
 
@@ -25,8 +24,7 @@
   <mat-chip color="primary" selected="true">CHARGE GLYCEMIQUE TOTALE : {{totalCharge}}</mat-chip> <br>
 
 
-  <!--La charge glycémique totale est de {{totalCharge}} <br>-->
-        <input type="submit" value="Réinitialiser">
+  <button mat-raised-button color="accent" (click)="resetCharge()">Réinitialiser</button>
 
 
   <div>

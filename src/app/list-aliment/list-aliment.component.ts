@@ -27,8 +27,6 @@ export class ListAlimentComponent implements OnInit {
   alimentCtrl = new FormControl();
 
   filteredAliment: Observable<Aliment[]>;
-  //selectedAliment;
-
 
 
   @ViewChild('alimentInput') alimentInput: ElementRef;
