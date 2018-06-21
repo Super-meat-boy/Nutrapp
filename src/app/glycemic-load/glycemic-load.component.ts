@@ -11,7 +11,6 @@ export class GlycemicLoadComponent implements OnInit {
   // displayedColumns = ['id', 'name', 'glycemie'];
   dataSource = [];
   totalCharge = 0;
-
   constructor() {
   }
 
@@ -23,6 +22,10 @@ export class GlycemicLoadComponent implements OnInit {
     this.totalCharge = totalCharge;
   }
 
+  resetCharge() {
+    this.dataSource = null;
+    this.totalCharge = 0;
+  }
 
   ngOnInit() {
   }

@@ -12,7 +12,7 @@
            placeholder="New aliment..."
            #alimentInput
            #alimentGlycemieInput
-
+           [(ngModel)]="selectedAliment"
            [formControl]="alimentCtrl"
            [matAutocomplete]="auto">
 
@@ -26,7 +26,7 @@
 </mat-form-field>
 
 
-<mat-card class="example-card" *ngIf="selectedAliment != null">
+<mat-card class="example-card" *ngIf="selectedAliment !== null">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title></mat-card-title>
