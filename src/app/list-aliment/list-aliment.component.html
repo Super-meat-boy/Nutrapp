@@ -9,13 +9,13 @@
       <mat-icon matAlimentRemove *ngIf="removable">cancel</mat-icon>
     </mat-chip> -->
     <input matInput
-      placeholder="New aliment..."
-      #alimentInput
-      #alimentGlycemieInput
+           placeholder="New aliment..."
+           #alimentInput
+           #alimentGlycemieInput
 
-      [formControl]="alimentCtrl"
-      [matAutocomplete]="auto"
-    />
+           [formControl]="alimentCtrl"
+           [matAutocomplete]="auto">
+
   <!-- </mat-chip-list> -->
 
   <mat-autocomplete #auto="matAutocomplete">
