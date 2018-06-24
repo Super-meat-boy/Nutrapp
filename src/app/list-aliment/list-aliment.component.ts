@@ -1,11 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {ElementRef, ViewChild} from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {MatAutocompleteSelectedEvent, MatChipInputEvent} from '@angular/material';
+import {FormBuilder, FormGroup } from '@angular/forms';
+import {MatAutocompleteSelectedEvent} from '@angular/material';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import { Aliment } from '../aliment';
+import {Aliment} from '../aliment';
 import {AlimentService} from '../aliment.service';
 import { FormsModule } from '@angular/forms';
 
@@ -18,19 +17,26 @@ import { FormsModule } from '@angular/forms';
 export class ListAlimentComponent implements OnInit {
 
 
-    myControl: FormControl = new FormControl();
-    selectedAliment: string;
+    alimentForm : FormGroup;
+    selectedAliment :Aliment;
     filteredAliment: Observable<Aliment[]>;
     name: string;
 
-@ViewChild('alimentInput') alimentInput: ElementRef;
-     constructor(public alimentService: AlimentService){
-       this.alimentService.selectedAliment = this.alimentService.listeAliment[0];
-
-
+    @ViewChild('alimentInput') alimentInput: ElementRef;
+    constructor(public alimentService: AlimentService,private fb: FormBuilder ){
+        this.selectedAliment = this.alimentService.listeAliment[0];
+        this.createForm();
 
      }
-
+     createForm() {
+        let aliment = this.selectedAliment;
+        this.alimentForm = this.fb.group({
+          aliment: aliment, // <--- the FormControl called "name"
+        });
+      }
+      displayFn(aliment ?: Aliment) {
+        return aliment ? aliment.name : undefined;
+      }
 
 
 /*
@@ -46,6 +52,7 @@ export class ListAlimentComponent implements OnInit {
   alimentCtrl = new FormControl();
 
   filteredAliment: Observable<Aliment[]>;
+  //selectedAliment;
 
 
 
@@ -53,7 +60,7 @@ export class ListAlimentComponent implements OnInit {
 
   constructor(public alimentService: AlimentService ) {
 
- //this.alimentService.selectedAliment = this.alimentService.listeAliment[0];
+    this.alimentService.selectedAliment = this.alimentService.listeAliment[0];
     this.filteredAliment = this.alimentCtrl.valueChanges.pipe(
         startWith(null),
         map((aliment) => (aliment && (typeof aliment === "object")) ? aliment.name : aliment),
@@ -68,8 +75,8 @@ export class ListAlimentComponent implements OnInit {
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-  //  this.selectedAliments.push(event.option.viewValue);
-    //console.log(this.selectedAliments);
+    //this.selectedAliment.push(event.option.viewValue);
+    //console.log(this.selectedAliment);
     this.alimentInput.nativeElement.value = '';
     this.alimentCtrl.setValue(null);
   }

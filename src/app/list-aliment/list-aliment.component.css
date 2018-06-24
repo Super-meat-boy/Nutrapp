@@ -1,8 +1,21 @@
 .example-card {
   max-width: 400px;
 }
+.example-form {
+  font-size: x-large;
+}
 
 .example-header-image {
-  background-image: url('http://www.isabelleinc.ca/Photos/Produit_77.jpg');
+  background-image: url('https://blog.docdispo.ma/wp-content/uploads/2017/12/photo-22-08-2016-01-10-25.jpg');
   background-size: cover;
+}
+
+.propriete{
+  line-height: 30px;
+  font-size: medium;
+  font-family: verdana, sans-serif;
+}
+
+.photoEcran{
+  text-align: center;
 }

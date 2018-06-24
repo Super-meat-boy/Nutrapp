@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Aliment} from '../aliment';
 
 @Component({
   selector: 'app-glycemic-load',
@@ -9,6 +10,18 @@ export class GlycemicLoadComponent{
 
   //displayedColumns = ['id', 'name', 'glycemie'];
   dataSource = [];
+  totalCharge = 0;
+
+  constructor() {
+  }
+
+  calculTotalCharge() {
+    let totalCharge = 0;
+    this.dataSource.forEach(function addNumber(elt: Aliment) {
+      totalCharge += elt.charge;
+    });
+    this.totalCharge = totalCharge;
+  }
 
  add(alim, ig , grammage) {
    console.log ('test', alim);

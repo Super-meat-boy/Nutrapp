@@ -1,24 +1,38 @@
 
-<form class="example-form">
+<form [formGroup]="alimentForm" class="example-form">
   <mat-form-field class="example-full-width">
 
-    <input type="text" placeholder="Saisir l'aliment ici:" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" (ngModelChange)="clearFilter()">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let aliment of alimentService.listeAliment" [value]="aliment.name">
+    <input formControlName="aliment" type="text" placeholder="Saisir l'aliment ici:" aria-label="Number" matInput [matAutocomplete]="auto" >
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let aliment of alimentService.listeAliment" [value]="aliment">
         {{aliment.name}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
 </form>
-<p>Consultation le: {{lastUpdate | date: 'short'}}</p>
+
+<div class="photoEcran">
+<img class="photo" width="380"
+       src="https://blog.docdispo.ma/wp-content/uploads/2017/12/photo-22-08-2016-01-10-25.jpg">
+</div>
+
+<div class="propriete" >La valeur glycémique de l'aliment {{alimentForm.value.aliment.name}} est de: {{ alimentForm.value.aliment.glycemie }} <br>
+Sa valeur en proteine est de: {{ alimentForm.value.aliment.proteine }} <br>
+Sa valeur en lipide est de: {{ alimentForm.value.aliment.lipide }} <br>
+Sa valeur en glucide est de: {{ alimentForm.value.aliment.glucide }}
+
+</div>
 
 <!--
 <mat-form-field class="listAliment">
 
     <input matInput
-      placeholder="New aliment..."
-      #alimentInput
-      #alimentGlycemieInput
+           placeholder="New aliment..."
+           #alimentInput
+           #alimentGlycemieInput
+
+           [formControl]="alimentCtrl"
+           [matAutocomplete]="auto">
 
       [formControl]="alimentCtrl"
       [matAutocomplete]="auto"/>
@@ -29,10 +43,7 @@
   {{aliment.name}};
 
     </mat-option>
-
-
   </mat-autocomplete>
-
 </mat-form-field>
 
 
