@@ -4,40 +4,40 @@
   </h1>
   <img width="160" alt="Angular Logo"
        src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
-       
+
        <div>
        <input type="text"  #alim placeholder="Aliment">
        <input type="text" #ig  placeholder="Indice Glycemique">
        <input type="text" #grammage placeholder="Grammage">
-       <input type="text" #charge  placeholder="Charge Glycemique">
        <input type="submit" value="Ajouter un Aliment" (click)="add( alim.value , ig.value, grammage.value)" >
        </div>
-      
-       
+
+
 <ul>
 
   <li *ngFor=" let alim of dataSource" >
     {{ alim.name }}   - {{ alim.glycemie}}   - {{alim.charge}}
-    
+
 </li>
 
 
 </ul>
-      
+
         <div>
         <input type="text" name="fname" placeholder="Total Charge Glycemique">
+  
         <input type="submit" value="Réinitialiser">
         </div>
-        
+
         <div>
         <input type="submit" value="Sauvegarder aux Menus Favoris">
-        </div>    
-      
-      
-      
+        </div>
+
+
+
         <!--
 
-      
+
         <button mat-raised-button (click)="addColumn()"> Add column </button>
 <button mat-raised-button (click)="removeColumn()"> Remove column </button>
 <button mat-raised-button (click)="shuffle()"> Shuffle </button>
