@@ -1,15 +1,11 @@
-/*mat-sidenav-container {
-  height: 50%;
+.example-container {
+  position: page;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: fit-content;
 }
 
-mat-nav-list {
-  width: 220px;
-  box-shadow: 3px 0 6px rgba(0,0,0,.24);
-}
 
-mat-sidenav-container {
-  justify-content: center;
-}
 
-mat-sidenav-content {
-}*/

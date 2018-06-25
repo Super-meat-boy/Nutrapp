@@ -77,6 +77,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     MatCardModule,
     MatTableModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

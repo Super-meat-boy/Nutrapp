@@ -1,3 +1,10 @@
+<h1>
+  Lister les aliments
+</h1>
+<img width="160" alt="Angular Logo"
+     src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
+<br>
+
 <mat-form-field class="listAliment">
   <!-- <mat-chip-list #listAliment>
     <mat-chip
@@ -8,13 +15,13 @@
       {{fruit}}
       <mat-icon matAlimentRemove *ngIf="removable">cancel</mat-icon>
     </mat-chip> -->
-    <input matInput
-           placeholder="New aliment..."
-           #alimentInput
-           #alimentGlycemieInput
-           [(ngModel)]="selectedAliment"
-           [formControl]="alimentCtrl"
-           [matAutocomplete]="auto">
+  <input matInput
+         placeholder="New aliment..."
+         #alimentInput
+         #alimentGlycemieInput
+         [(ngModel)]="selectedAliment"
+         [formControl]="alimentCtrl"
+         [matAutocomplete]="auto">
 
   <!-- </mat-chip-list> -->
 
@@ -32,7 +39,7 @@
     <mat-card-title></mat-card-title>
   </mat-card-header>
   <img mat-card-image src="http://lavieagricole.ca/media/image_article/patates.jpg" alt="Photo of potatoes">
-    <mat-card-subtitle>Les apports nutritionnels de l'aliment sélectionné sont: </mat-card-subtitle>
+  <mat-card-subtitle>Les apports nutritionnels de l'aliment sélectionné sont:</mat-card-subtitle>
   <mat-card-content>
     <p>
 
