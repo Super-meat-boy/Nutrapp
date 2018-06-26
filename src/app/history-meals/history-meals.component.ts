@@ -13,7 +13,7 @@ export class HistoryMealsComponent{
 
   export interface PeriodicElement {
 
-    date: number;
+    date: string;
     repas: string;
     menu: string;
     charge: number;
