@@ -1,11 +1,13 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {FormControl} from '@angular/forms';
+import {FormBuilder, FormGroup } from '@angular/forms';
 import {MatAutocompleteSelectedEvent} from '@angular/material';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {Aliment} from '../aliment';
 import {AlimentService} from '../aliment.service';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-list-aliment',
@@ -14,13 +16,36 @@ import {AlimentService} from '../aliment.service';
 })
 export class ListAlimentComponent implements OnInit {
 
-  //ListAlimentComponent Aliment;
 
+    alimentForm : FormGroup;
+    selectedAliment :Aliment;
+    filteredAliment: Observable<Aliment[]>;
+    name: string;
+
+    @ViewChild('alimentInput') alimentInput: ElementRef;
+    constructor(public alimentService: AlimentService,private fb: FormBuilder ){
+        this.selectedAliment = this.alimentService.listeAliment[0];
+        this.createForm();
+
+     }
+     createForm() {
+        let aliment = this.selectedAliment;
+        this.alimentForm = this.fb.group({
+          aliment: aliment, // <--- the FormControl called "name"
+        });
+      }
+      displayFn(aliment ?: Aliment) {
+        return aliment ? aliment.name : undefined;
+      }
+
+
+/*
   aliments = this.alimentService.listeAliment;
   visible: boolean = true;
   selectable: boolean = true;
   removable: boolean = true;
   addOnBlur: boolean = false;
+  selectedAliment: string;
 
   separatorKeysCodes = [ENTER, COMMA];
 
@@ -38,9 +63,6 @@ export class ListAlimentComponent implements OnInit {
         startWith(null),
         map((aliment) => (aliment && (typeof aliment === "object")) ? aliment.name : aliment),
         map((alimentName) => (alimentName) ? this.filter(alimentName) : this.aliments.slice())
-
-
-
       );
   }
 
@@ -56,8 +78,9 @@ export class ListAlimentComponent implements OnInit {
     this.alimentInput.nativeElement.value = '';
     this.alimentCtrl.setValue(null);
   }
-  ngOnInit() {
-  }
 
+  */
+ngOnInit(){
 
+}
 }

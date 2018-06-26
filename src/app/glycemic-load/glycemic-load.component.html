@@ -13,22 +13,24 @@
   </form>
 
 
+
   <ul>
   <li *ngFor=" let alim of dataSource" >
-    La charge glycémique de l'aliment {{alim.name}} est {{alim.charge}}
-    <!--{{ alim.name }}   - {{ alim.glycemie}}   - {{alim.charge}}-->
+    {{ alim.name }} - {{ alim.glycemie}} - {{alim.charge}}
+
   </li>
-</ul>
 
 
-  <mat-chip color="primary" selected="true">CHARGE GLYCEMIQUE TOTALE : {{totalCharge}}</mat-chip> <br>
+  </ul>
 
 
   <button mat-raised-button color="accent" (click)="resetCharge()">Réinitialiser</button>
-
-
   <div>
-        <input type="submit" value="Sauvegarder aux Menus Favoris">
+    <input type="text" name="fname" placeholder="Total Charge Glycemique">
+    <input type="submit" value="Réinitialiser">
+  </div>
+  <div>
+    <input type="submit" value="Sauvegarder aux Menus Favoris">
   </div>
 
 
