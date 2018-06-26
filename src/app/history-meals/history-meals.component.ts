@@ -17,7 +17,6 @@ export class HistoryMealsComponent{
     repas: string;
     menu: string;
     charge: number;
-    repas: string;
 
   }
 
