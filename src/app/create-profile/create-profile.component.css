@@ -1,4 +1,4 @@
-.myprofile {
+.register {
   min-width: 150px;
   max-width: 500px;
   width: 100%;
@@ -9,5 +9,6 @@
 }
 
 .submit {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
+

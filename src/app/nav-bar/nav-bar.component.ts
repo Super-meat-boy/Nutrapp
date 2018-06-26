@@ -1,21 +1,24 @@
 import {Component} from '@angular/core';
+import {map} from 'rxjs/operators';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-//export class NavBarComponent {
 
-//isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-//.pipe(
-//map(result => result.matches)
-//);
-
-//constructor(private breakpointObserver: BreakpointObserver) {
-//}
-//}
 
 export class NavBarComponent {
-  shouldRun = [/(^|\.)$/, /(^|\.)$/].some(h => h.test(window.location.host));
+  events: string[] = [];
+  opened: boolean = true;
+
+  shouldRun = true;
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches));
+
+  constructor(private breakpointObserver: BreakpointObserver) {
+  }
 }

@@ -1,42 +1,70 @@
+<h1>
+  Lister les aliments
+</h1>
+<img width="160" alt="Angular Logo"
+     src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
+<br>
 
-<form [formGroup]="alimentForm" class="example-form">
-  <mat-form-field class="example-full-width">
-
-    <input formControlName="aliment" type="text" placeholder="Saisir l'aliment ici:" aria-label="Number" matInput [matAutocomplete]="auto" >
-    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-      <mat-option *ngFor="let aliment of alimentService.listeAliment" [value]="aliment">
-        {{aliment.name}}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-</form>
-
-<div class="photoEcran">
-<img class="photo" width="380"
-       src="https://blog.docdispo.ma/wp-content/uploads/2017/12/photo-22-08-2016-01-10-25.jpg">
-</div>
-
-<div class="propriete" >La valeur glycémique de l'aliment {{alimentForm.value.aliment.name}} est de: {{ alimentForm.value.aliment.glycemie }} <br>
-Sa valeur en proteine est de: {{ alimentForm.value.aliment.proteine }} <br>
-Sa valeur en lipide est de: {{ alimentForm.value.aliment.lipide }} <br>
-Sa valeur en glucide est de: {{ alimentForm.value.aliment.glucide }}
-
-</div>
-
-<!--
 <mat-form-field class="listAliment">
+  <!-- <mat-chip-list #listAliment>
+    <mat-chip
+      *ngFor="let aliment of aliment"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(aliment)">
+      {{fruit}}
+      <mat-icon matAlimentRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip> -->
+  <input matInput
+         placeholder="New aliment..."
+         #alimentInput
+         #alimentGlycemieInput
+         [(ngModel)]="selectedAliment"
+         [formControl]="alimentCtrl"
+         [matAutocomplete]="auto">
 
-    <input matInput
-           placeholder="New aliment..."
-           #alimentInput
-           #alimentGlycemieInput
 
-           [formControl]="alimentCtrl"
-           [matAutocomplete]="auto">
+  <form [formGroup]="alimentForm" class="example-form">
+    <mat-form-field class="example-full-width">
 
-      [formControl]="alimentCtrl"
-      [matAutocomplete]="auto"/>
-  <!-- </mat-chip-list> -->
+      <input formControlName="aliment" type="text" placeholder="Saisir l'aliment ici:" aria-label="Number" matInput
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let aliment of alimentService.listeAliment" [value]="aliment">
+          {{aliment.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+  <div class="photoEcran">
+    <img class="photo" width="380"
+         src="https://blog.docdispo.ma/wp-content/uploads/2017/12/photo-22-08-2016-01-10-25.jpg">
+  </div>
+
+  <div class="propriete">La valeur glycémique de l'aliment {{alimentForm.value.aliment.name}} est de: {{
+    alimentForm.value.aliment.glycemie }} <br>
+    Sa valeur en proteine est de: {{ alimentForm.value.aliment.proteine }} <br>
+    Sa valeur en lipide est de: {{ alimentForm.value.aliment.lipide }} <br>
+    Sa valeur en glucide est de: {{ alimentForm.value.aliment.glucide }}
+
+  </div>
+
+  <!--
+  <mat-form-field class="listAliment">
+
+      <input matInput
+             placeholder="New aliment..."
+             #alimentInput
+             #alimentGlycemieInput
+
+             [formControl]="alimentCtrl"
+             [matAutocomplete]="auto">
+
+
+        [formControl]="alimentCtrl"
+        [matAutocomplete]="auto"/>
+    <!-- </mat-chip-list> -->
   <!--
   <mat-autocomplete #auto="matAutocomplete">
     <mat-option *ngFor="let aliment of filteredAliment | async" [value]= "aliment.name">
@@ -47,13 +75,17 @@ Sa valeur en glucide est de: {{ alimentForm.value.aliment.glucide }}
 </mat-form-field>
 
 
-<mat-card class="example-card" *ngIf="selectedAliment != null">
+<mat-card class="example-card" *ngIf="selectedAliment !== null">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title></mat-card-title>
   </mat-card-header>
   <img mat-card-image src="http://lavieagricole.ca/media/image_article/patates.jpg" alt="Photo of potatoes">
+
+  <mat-card-subtitle>Les apports nutritionnels de l'aliment sélectionné sont:</mat-card-subtitle>
+
     <mat-card-subtitle>Les apports nutritionnels de l'aliment sélectionné sont de: </mat-card-subtitle>
+
   <mat-card-content>
 Charge Glycémique
   </mat-card-content>

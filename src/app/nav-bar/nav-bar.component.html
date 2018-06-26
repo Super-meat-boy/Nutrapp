@@ -20,33 +20,25 @@
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
-
-
 </mat-sidenav-container>
 
 
-<!--<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+<!--<mat-sidenav-container class="example-container" *ngIf="shouldRun">
+  <mat-sidenav position="start" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
                (closed)="events.push('close!')">
     <mat-nav-list>
-      <a mat-list-item href="#">Calcul charge Glycémique</a>
-      <a mat-list-item href="#">Lister les Aliments</a>
-      <a mat-list-item href="#">Historique des Repas</a>
-      <a mat-list-item href="#">Mes Menus Favoris</a>
-      <a mat-list-item href="#">Mon Profil</a>
-      <a mat-list-item href="#">Nous Contacter</a>
+      <a mat-list-item routerLink="/glycemic-load">Calcul charge Glycémique</a>
+      <a mat-list-item routerLink="/list-aliment">Lister les Aliments</a>
+      <a mat-list-item routerLink="/history-meals">Historique des Repas</a>
+      <a mat-list-item routerLink="/favorite-meals">Mes Menus Favoris</a>
+      <a mat-list-item routerLink="/myprofile">Mon Profil</a>
+      <a mat-list-item routerLink="/contact">Nous Contacter</a>
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
-    <p>
-      <mat-checkbox [(ngModel)]="opened"></mat-checkbox>
-    </p>
-    <p>
-      <button mat-button (click)="sidenav.toggle()"></button>
-    </p>
-  </mat-sidenav-content>
-</mat-sidenav-container>
 
-<div *ngIf="!shouldRun"></div>-->
+  <mat-sidenav-content>
+    <mat-checkbox [(ngModel)]="opened"></mat-checkbox>
+  </mat-sidenav-content>
+</mat-sidenav-container>-->
 
