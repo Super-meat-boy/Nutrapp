@@ -26,6 +26,7 @@ import {
   MatListModule,
   MatSidenavModule,
   MatToolbarModule,
+  MatTabsModule,
  } from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
@@ -55,6 +56,7 @@ const routes: Routes = [
     AuthentificationComponent,
 
 
+
   ],
   imports: [
     BrowserModule,
@@ -77,6 +79,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     MatCardModule,
     MatTableModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
