@@ -6,4 +6,6 @@ table {
     margin: 16px 8px;
   }
 
-
+  .title {
+    text-align: center;
+  }

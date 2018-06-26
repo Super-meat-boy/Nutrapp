@@ -14,8 +14,14 @@
   line-height: 30px;
   font-size: medium;
   font-family: verdana, sans-serif;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .photoEcran{
   text-align: center;
+}
+
+.title{
+text-align: center;
 }

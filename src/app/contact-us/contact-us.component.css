@@ -6,3 +6,6 @@ mat-form-field {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.title {
+  text-align: center;
+}
