@@ -29,6 +29,7 @@ import {
 } from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import {CreateProfileComponent} from './create-profile/create-profile.component';
 
 const routes: Routes = [
   {path: 'contact', component: ContactUsComponent},
@@ -38,6 +39,8 @@ const routes: Routes = [
   {path: 'history-meals', component: HistoryMealsComponent},
   {path: 'list-aliment', component: ListAlimentComponent},
   {path: '', component: AuthentificationComponent},
+  {path: 'register', component: CreateProfileComponent},
+
 ];
 
 
@@ -53,6 +56,7 @@ const routes: Routes = [
     GlycemicLoadComponent,
     HistoryMealsComponent,
     AuthentificationComponent,
+    CreateProfileComponent,
 
 
   ],
