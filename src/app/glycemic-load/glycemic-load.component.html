@@ -1,51 +1,35 @@
-
+<div class="title">
   <h1>
-   Calcul de la Charge Glycemique
+    Glycemic Charge Calculator
   </h1>
   <img width="160" alt="Angular Logo"
        src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
+</div>
 
   <form>
        <input type="text"  #alim placeholder="Aliment">
-       <input type="text" #ig  placeholder="Indice Glycemique">
-       <input type="text" #grammage placeholder="Grammage">
-    <input type="submit" value="Ajouter un Aliment" (click)="add( alim.value , ig.value, grammage.value)">
+    <input type="text" #ig placeholder="Glycemic index">
+    <input type="text" #grammage placeholder="Weight">
+    <input type="submit" value="Add an aliment" (click)="add( alim.value , ig.value, grammage.value)">
   </form>
 
 
   <ul>
   <li *ngFor=" let alim of dataSource" >
-    La charge glycémique de l'aliment {{alim.name}} est {{alim.charge}}
-    <!--{{ alim.name }}   - {{ alim.glycemie}}   - {{alim.charge}}-->
+    The glycemic charge of {{alim.name}} is {{alim.charge}}
+
   </li>
 </ul>
 
 
-  <mat-chip color="primary" selected="true">CHARGE GLYCEMIQUE TOTALE : {{totalCharge}}</mat-chip> <br>
+<mat-chip color="primary" selected="true">GLYCEMIC TOTAL CHARGE : {{totalCharge}}</mat-chip> <br>
 
 
-  <button mat-raised-button color="accent" (click)="resetCharge()">Réinitialiser</button>
+<button mat-raised-button color="accent" (click)="resetCharge()">Reset</button>
 
 
   <div>
-        <input type="submit" value="Sauvegarder aux Menus Favoris">
+    <input type="submit" value="Save to favorite meals">
   </div>
 
 
-  <!--
-
-
-  <button mat-raised-button (click)="addColumn()"> Add column </button>
-<button mat-raised-button (click)="removeColumn()"> Remove column </button>
-<button mat-raised-button (click)="shuffle()"> Shuffle </button>
-
-<table mat-table [dataSource]="data" class="mat-elevation-z8">
-<ng-container matColumnDef="{{column}}" *ngFor="let column of definedColumns">
-<th mat-header-cell *matHeaderCellDef> {{column}} </th>
-<td mat-cell *matCellDef="let element"> {{element[column]}} </td>
-</ng-container>
-
-<tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-<tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
-</table>
--->

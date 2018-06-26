@@ -1,6 +1,6 @@
 <div class="title">
 <h1>
-  Lister les aliments
+  Aliments List
 </h1>
 <img width="160" alt="Nutrapp Logo"
 src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
@@ -16,7 +16,7 @@ src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC
   <form [formGroup]="alimentForm" class="example-form">
     <mat-form-field class="example-full-width">
       <input formControlName="aliment" matInput
-             placeholder="Saisir un aliment"
+             placeholder="Please make a selection"
              #alimentInput
              #alimentGlycemieInput
              [(ngModel)]="selectedAliment"
@@ -35,9 +35,9 @@ src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC
          src="https://blog.docdispo.ma/wp-content/uploads/2017/12/photo-22-08-2016-01-10-25.jpg">
   </div>
 
-  <div class="propriete">La valeur glycémique de l'aliment {{alimentForm.value.aliment.name}} est de: {{
+<div class="propriete">The glycemic index of {{alimentForm.value.aliment.name}} is : {{
     alimentForm.value.aliment.glycemie }} <br>
-    Sa valeur en proteine est de: {{ alimentForm.value.aliment.proteine }} <br>
-    Sa valeur en lipide est de: {{ alimentForm.value.aliment.lipide }} <br>
-    Sa valeur en glucide est de: {{ alimentForm.value.aliment.glucide }}
+  His protein value is: {{ alimentForm.value.aliment.proteine }} <br>
+  His lipid value is: {{ alimentForm.value.aliment.lipide }} <br>
+  His glucid value is : {{ alimentForm.value.aliment.glucide }}
   </div>
