@@ -1,14 +1,9 @@
-<div class="title">
-    <h1>
+
+  <h1>
    Calcul de la Charge Glycemique
   </h1>
-  <img width="160" alt="Nutrapp Logo"
+  <img width="160" alt="Angular Logo"
        src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
-</div>
-
-<br>
-<br>
-<br>
 
   <form>
        <input type="text"  #alim placeholder="Aliment">
@@ -18,24 +13,22 @@
   </form>
 
 
-
   <ul>
   <li *ngFor=" let alim of dataSource" >
-    {{ alim.name }} - {{ alim.glycemie}} - {{alim.charge}}
-
+    La charge glycémique de l'aliment {{alim.name}} est {{alim.charge}}
+    <!--{{ alim.name }}   - {{ alim.glycemie}}   - {{alim.charge}}-->
   </li>
+</ul>
 
 
-  </ul>
+  <mat-chip color="primary" selected="true">CHARGE GLYCEMIQUE TOTALE : {{totalCharge}}</mat-chip> <br>
 
 
   <button mat-raised-button color="accent" (click)="resetCharge()">Réinitialiser</button>
+
+
   <div>
-    <input type="text" name="fname" placeholder="Total Charge Glycemique">
-    <input type="submit" value="Réinitialiser">
-  </div>
-  <div>
-    <input type="submit" value="Sauvegarder aux Menus Favoris">
+        <input type="submit" value="Sauvegarder aux Menus Favoris">
   </div>
 
 

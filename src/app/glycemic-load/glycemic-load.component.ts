@@ -24,7 +24,7 @@ export class GlycemicLoadComponent {
 
 
   resetCharge() {
-    this.dataSource = null;
+    this.dataSource = [];
     this.totalCharge = 0;
   }
 
