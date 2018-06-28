@@ -6,13 +6,24 @@
        src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
 </div>
 
+<br>
+<br>
+<br>
+
+<div class="saisie">
   <form>
-       <input type="text"  #alim placeholder="Aliment">
+    <input type="text"  #alim placeholder="Aliment">
+    <br>
+    <br>
     <input type="text" #ig placeholder="Glycemic index">
+    <br>
+    <br>
     <input type="text" #grammage placeholder="Weight">
+    <br>
+    <br>
     <input type="submit" value="Add an aliment" (click)="add( alim.value , ig.value, grammage.value)">
   </form>
-
+</div>
 
   <ul>
   <li *ngFor=" let alim of dataSource" >
@@ -31,5 +42,4 @@
   <div>
     <input type="submit" value="Save to favorite meals">
   </div>
-
-
+  <br>
