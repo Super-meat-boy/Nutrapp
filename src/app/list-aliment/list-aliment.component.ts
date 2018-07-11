@@ -55,5 +55,3 @@ export class ListAlimentComponent implements OnInit {
     return this.options.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
   }
 }
-
-
