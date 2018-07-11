@@ -89,6 +89,7 @@ const routes: Routes = [
     MatTableModule,
     MatTabsModule,
     HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
