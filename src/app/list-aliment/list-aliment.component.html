@@ -12,28 +12,18 @@ src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC
 <br>
 <br>
 
+<form>
+  <mat-autocomplete>
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{ option }}
+    </mat-option>
+  </mat-autocomplete>
+</form>
 
-  <form [formGroup]="alimentForm" class="example-form">
-    <mat-form-field class="example-full-width">
-      <input formControlName="aliment" matInput
-             placeholder="Please make a selection"
-             #alimentInput
-             #alimentGlycemieInput
-             [(ngModel)]="selectedAliment"
-             [matAutocomplete]="auto"
-             [value]="">
-      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-        <mat-option *ngFor="let aliment of alimentService.listeAliment" [value]="aliment">
-          {{aliment.name}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-  </form>
-
-  <div class="photoEcran">
-    <img class="photo" width="380"
-         src="https://blog.docdispo.ma/wp-content/uploads/2017/12/photo-22-08-2016-01-10-25.jpg">
-  </div>
+<div class="photoEcran">
+  <img class="photo" width="380"
+       src="https://blog.docdispo.ma/wp-content/uploads/2017/12/photo-22-08-2016-01-10-25.jpg">
+</div>
 
 <div class="propriete">The glycemic index of {{alimentForm.value.aliment.name}} is : {{
     alimentForm.value.aliment.glycemie }} <br>

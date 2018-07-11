@@ -2,13 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {AlimentService} from '../aliment.service';
 import {Aliment} from '../aliment';
 
-
 @Component({
-  selector: 'app-list-aliment',
-  templateUrl: './list-aliment.component.html',
-  styleUrls: ['./list-aliment.component.css'],
+  selector: 'app-list-test',
+  templateUrl: './list-test.component.html',
+  styleUrls: ['./list-test.component.css']
 })
-export class ListAlimentComponent implements OnInit {
+export class ListTestComponent implements OnInit {
   aliments: Aliment[] = [];
 
 

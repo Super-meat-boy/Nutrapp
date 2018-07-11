@@ -25,12 +25,14 @@ import {
   MatInputModule,
   MatListModule,
   MatSidenavModule,
-  MatToolbarModule,
   MatTabsModule,
- } from '@angular/material';
+  MatToolbarModule,
+} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {CreateProfileComponent} from './create-profile/create-profile.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ListTestComponent} from './list-test/list-test.component';
 
 const routes: Routes = [
   {path: 'contact', component: ContactUsComponent},
@@ -41,6 +43,7 @@ const routes: Routes = [
   {path: 'list-aliment', component: ListAlimentComponent},
   {path: '', component: AuthentificationComponent},
   {path: 'register', component: CreateProfileComponent},
+  {path: 'test', component: ListTestComponent},
 
 ];
 
@@ -58,6 +61,7 @@ const routes: Routes = [
     HistoryMealsComponent,
     AuthentificationComponent,
     CreateProfileComponent,
+    ListTestComponent,
 
 
 
@@ -84,6 +88,7 @@ const routes: Routes = [
     MatCardModule,
     MatTableModule,
     MatTabsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
