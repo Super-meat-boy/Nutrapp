@@ -3,7 +3,8 @@ import {AlimentService} from '../aliment.service';
 import {Aliment} from '../aliment';
 import {Observable} from 'rxjs';
 import {FormControl} from '@angular/forms';
-import {map, startWith} from 'rxjs/operators';
+import {map, tap, startWith} from 'rxjs/operators';
+
 
 
 @Component({
@@ -12,7 +13,7 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./list-aliment.component.css'],
 })
 export class ListAlimentComponent implements OnInit {
-  //aliments: Observable<Aliment[]> = this.alimentService.getAll();
+  // aliments: Observable<Aliment[]> = this.alimentService.getAll();
   myControl = new FormControl();
   options: Aliment[] = [
     // {id: 1, name: 'Tomate', glycemie: 11, glucide: 1, charge: 11, lipide: 12, proteine: 11},
@@ -21,6 +22,7 @@ export class ListAlimentComponent implements OnInit {
     // {id: 4, name: 'Haricot', glycemie: 11, glucide: 1, charge: 11, lipide: 12, proteine: 11},
 
   ];
+  selectedAliment: Aliment | string;
   filteredOptions: Observable<Aliment[]>;
 
 
@@ -31,7 +33,6 @@ export class ListAlimentComponent implements OnInit {
   ngOnInit() {
     this.refresh();
   }
-
   refresh() {
     this.alimentService.getAll().subscribe((list) => {
       console.log(list);
@@ -40,9 +41,21 @@ export class ListAlimentComponent implements OnInit {
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith<string | Aliment>(''),
+        tap(value => {
+          if (typeof value !== 'string') {
+          this.selectedAliment = value;
+           } else {
+             this.selectedAliment = null;
+           }
+          //this.selectedAliment = value;
+          console.log('this selected aliment', this.selectedAliment);
+        }),
         map(value => typeof value === 'string' ? value : value.name),
-        map(name => name ? this._filter(name) : this.options.slice())
+        map(name => name ? this._filter(name) : this.options.slice()),
+
       );
+
+
   }
 
   displayFn(aliment ?: Aliment): string | undefined {
@@ -54,4 +67,6 @@ export class ListAlimentComponent implements OnInit {
 
     return this.options.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
   }
+
+
 }

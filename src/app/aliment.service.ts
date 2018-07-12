@@ -93,6 +93,7 @@ export class AlimentService {
   }
 
   getAll(): Observable<Aliment[]> {
+    console.log('getAll apiURL', this.API_URL );
     return this.http.get<Aliment[]>(this.API_URL);
   }
 

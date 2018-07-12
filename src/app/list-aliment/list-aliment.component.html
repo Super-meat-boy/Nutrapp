@@ -24,6 +24,10 @@ src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC
   </mat-form-field>
 </form>
 
+<p *ngIf="selectedAliment">
+ The glycemic index of this aliment is :  {{selectedAliment?.chargeGly}}
+</p>
+
 <div class="photoEcran">
   <img class="photo" width="380"
        src="https://blog.docdispo.ma/wp-content/uploads/2017/12/photo-22-08-2016-01-10-25.jpg">

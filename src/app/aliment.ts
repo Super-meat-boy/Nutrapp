@@ -1,7 +1,7 @@
 export interface Aliment {
   id: number;
   name: string;
-  glycemie: number;
+  chargeGly: number;
   glucide: number;
   proteine: number;
   lipide: number;
