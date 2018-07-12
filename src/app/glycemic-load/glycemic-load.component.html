@@ -10,22 +10,21 @@
 <br>
 <br>
 
-<form class="saisie">
+<div class="saisie">
 
-  <form>
 
-    <input type="text" #alim placeholder="Aliment">
+  <input type="text" [(ngModel)]="alimTest.name" #alim placeholder="Aliment">
     <br>
     <br>
-    <input type="number" #ig placeholder="Glycemic index">
+  <input type="number" [(ngModel)]="alimTest.chargeGly" #ig placeholder="Glycemic index">
     <br>
     <br>
-    <input type="number" #grammage placeholder="Weight">
+  <input type="number" [(ngModel)]="alimTest.grammage" #grammage placeholder="Weight">
     <br>
     <br>
-    <input type="submit" value="Add an aliment" (click)="add(alim.value,ig.value,grammage.value)">
+  <input type="submit" value="Add an aliment" (click)="add(alimTest.name,alimTest.chargeGly,alimTest.grammage)">
 
-  </form>
+</div>
 
 
   <ul>

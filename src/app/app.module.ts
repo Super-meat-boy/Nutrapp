@@ -35,13 +35,13 @@ import {HttpClientModule} from '@angular/common/http';
 
 
 const routes: Routes = [
+  {path: '', component: AuthentificationComponent},
   {path: 'contact', component: ContactUsComponent},
   {path: 'myprofile', component: MyProfileComponent},
   {path: 'favorite-meals', component: FavoriteMealsComponent},
   {path: 'glycemic-load', component: GlycemicLoadComponent},
   {path: 'history-meals', component: HistoryMealsComponent},
   {path: 'list-aliment', component: ListAlimentComponent},
-  {path: '', component: AuthentificationComponent},
   {path: 'register', component: CreateProfileComponent},
 
 

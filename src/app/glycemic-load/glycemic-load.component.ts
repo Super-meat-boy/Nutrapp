@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Aliment} from '../aliment';
 
 @Component({
@@ -6,13 +6,13 @@ import {Aliment} from '../aliment';
   templateUrl: './glycemic-load.component.html',
   styleUrls: ['./glycemic-load.component.css']
 })
-export class GlycemicLoadComponent {
+export class GlycemicLoadComponent implements OnInit {
 
   //displayedColumns = ['id', 'name', 'glycemie'];
   dataSource = [];
   totalCharge = 0;
 
-  alimTest: Aliment = {id: null, name: '', calorie: 0, chargeGly: 0};
+  alimTest: Aliment = {id: null, name: '', grammage: 0, chargeGly: 0};
 
   constructor() {
   }
@@ -36,7 +36,7 @@ export class GlycemicLoadComponent {
 
   add(alim, ig, grammage) {
     console.log('test', alim);
-    this.dataSource.push({id: 7, name: name, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
+    this.dataSource.push({id: 7, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
     this.calculTotalCharge();
   }
 
