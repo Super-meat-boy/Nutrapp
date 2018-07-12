@@ -13,16 +13,29 @@
 <div class="saisie">
 
 
-  <input type="text" [(ngModel)]="alimTest.name" #alim placeholder="Aliment">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Assignee" [(ngModel)]="selectedAliment.name" #alim placeholder="Aliment" matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+
+  <br>
+  <input type="number" [(ngModel)]="selectedAliment.chargeGly" #ig placeholder="Glycemic index">
     <br>
     <br>
-  <input type="number" [(ngModel)]="alimTest.chargeGly" #ig placeholder="Glycemic index">
+  <input type="number" [(ngModel)]="selectedAliment.grammage" #grammage placeholder="Weight">
     <br>
     <br>
-  <input type="number" [(ngModel)]="alimTest.grammage" #grammage placeholder="Weight">
-    <br>
-    <br>
-  <input type="submit" value="Add an aliment" (click)="add(alimTest.name,alimTest.chargeGly,alimTest.grammage)">
+  <input type="submit" value="Add an aliment"
+         (click)="add(selectedAliment.name,selectedAliment.chargeGly,selectedAliment.grammage)">
 
 </div>
 
@@ -49,3 +62,6 @@
   <div>
     <input type="submit" value="Save to favorite meals">
   </div>
+
+
+
