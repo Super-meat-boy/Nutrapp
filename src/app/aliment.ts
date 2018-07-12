@@ -1,9 +1,12 @@
 export interface Aliment {
   id: number;
   name: string;
+  calorie: number;
   chargeGly: number;
-  glucide: number;
-  proteine: number;
-  lipide: number;
-  charge: number;
+
 }
+
+
+
+
+

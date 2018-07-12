@@ -10,32 +10,35 @@
 <br>
 <br>
 
-<div class="saisie">
-<<<<<<< HEAD
+<form class="saisie">
+
   <form>
-    <input type="text"  #alim placeholder="aliment">
-=======
 
-  <input type="text" [(ngModel)]="alimTest.name" #alim placeholder="Aliment">
->>>>>>> b02595086797fcee1e36d3535f743de60a658af0
+    <input type="text" #alim placeholder="Aliment">
     <br>
     <br>
-  <input type="number" [(ngModel)]="alimTest.glycemie" #ig placeholder="Glycemic index">
+    <input type="number" #ig placeholder="Glycemic index">
     <br>
     <br>
-  <input type="number" [(ngModel)]="alimTest.charge" #grammage placeholder="Weight">
+    <input type="number" #grammage placeholder="Weight">
     <br>
     <br>
-  <input type="submit" value="Add an aliment" (click)="add(alimTest.name,alimTest.glycemie,alimTest.charge)">
+    <input type="submit" value="Add an aliment" (click)="add(alim.value,ig.value,grammage.value)">
 
-</div>
+  </form>
+
 
   <ul>
   <li *ngFor=" let alim of dataSource" >
     The glycemic charge of {{alim.name}} is {{alim.chargeGly}}
-
   </li>
 </ul>
+
+
+  <!--
+  [(ngModel)]="alimTest.name"
+  [(ngModel)]="alimTest.glycemie"
+  [(ngModel)]="alimTest.chargeGly"-->
 
 
 <mat-chip color="primary" selected="true">GLYCEMIC TOTAL CHARGE : {{totalCharge}}</mat-chip> <br>
@@ -47,4 +50,3 @@
   <div>
     <input type="submit" value="Save to favorite meals">
   </div>
-  <br>

@@ -12,8 +12,7 @@ export class GlycemicLoadComponent {
   dataSource = [];
   totalCharge = 0;
 
-  alimTest: Aliment = {id: null, name: '', glucide: 0, lipide: 0, glycemie: 0, chargeGly: 0, proteine: 0};
-
+  alimTest: Aliment = {id: null, name: '', calorie: 0, chargeGly: 0};
 
   constructor() {
   }
@@ -37,7 +36,7 @@ export class GlycemicLoadComponent {
 
   add(alim, ig, grammage) {
     console.log('test', alim);
-    this.dataSource.push({id: 7, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
+    this.dataSource.push({id: 7, name: name, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
     this.calculTotalCharge();
   }
 
