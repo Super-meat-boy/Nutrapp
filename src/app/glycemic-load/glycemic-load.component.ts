@@ -11,6 +11,10 @@ export class GlycemicLoadComponent {
   //displayedColumns = ['id', 'name', 'glycemie'];
   dataSource = [];
   totalCharge = 0;
+<<<<<<< HEAD
+=======
+  alimTest: Aliment = {id: null, name: '', glucide: 0, lipide: 0, glycemie: 0, charge: 0, proteine: 0};
+>>>>>>> b02595086797fcee1e36d3535f743de60a658af0
 
   constructor() {
   }
