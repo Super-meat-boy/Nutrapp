@@ -11,10 +11,9 @@ export class GlycemicLoadComponent {
   //displayedColumns = ['id', 'name', 'glycemie'];
   dataSource = [];
   totalCharge = 0;
-<<<<<<< HEAD
-=======
-  alimTest: Aliment = {id: null, name: '', glucide: 0, lipide: 0, glycemie: 0, charge: 0, proteine: 0};
->>>>>>> b02595086797fcee1e36d3535f743de60a658af0
+
+  alimTest: Aliment = {id: null, name: '', glucide: 0, lipide: 0, glycemie: 0, chargeGly: 0, proteine: 0};
+
 
   constructor() {
   }
@@ -22,7 +21,7 @@ export class GlycemicLoadComponent {
   calculTotalCharge() {
     let totalCharge = 0;
     this.dataSource.forEach(function addNumber(elt: Aliment) {
-      totalCharge += elt.charge;
+      totalCharge += elt.chargeGly;
     });
     this.totalCharge = totalCharge;
   }
@@ -38,7 +37,7 @@ export class GlycemicLoadComponent {
 
   add(alim, ig, grammage) {
     console.log('test', alim);
-    this.dataSource.push({id: 7, name: alim, glycemie: ig, grammage: grammage, charge: (grammage * ig) / 100});
+    this.dataSource.push({id: 7, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
     this.calculTotalCharge();
   }
 
