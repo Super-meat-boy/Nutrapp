@@ -62,8 +62,10 @@ export class GlycemicLoadComponent implements OnInit {
         map(name => name ? this._filter(name) : this.options.slice()),
       );
   }
+
   add(alim, ig, grammage) {
-    console.log('test', alim);
+    console.log('add');
+    console.log(alim);
     this.dataSource.push({id: 7, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
     this.calculTotalCharge();
   }
