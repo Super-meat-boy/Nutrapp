@@ -11,5 +11,13 @@ export class FavoriteMealsComponent implements OnInit {
 
   ngOnInit() {
   }
+createMeals() {
 
 }
+
+}
+
+
+
+
+

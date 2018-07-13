@@ -7,9 +7,6 @@
 </div>
 
 <br>
-<br>
-<br>
-
 <div class="saisie">
 
 
@@ -26,8 +23,6 @@
     </mat-form-field>
   </form>
 
-
-  <br>
   <input type="number" [(ngModel)]="selectedAliment.chargeGly" #ig placeholder="Glycemic index">
     <br>
     <br>
@@ -39,27 +34,24 @@
 
 </div>
 
-
   <ul>
   <li *ngFor=" let alim of dataSource" >
     The glycemic charge of {{alim.name}} is {{alim.chargeGly}}
   </li>
 </ul>
-
-
   <!--
   [(ngModel)]="alimTest.name"
   [(ngModel)]="alimTest.glycemie"
   [(ngModel)]="alimTest.chargeGly"-->
+<br>
+<br>
+<br>
+
 
 <div>{{errormessage}}</div>
-<mat-chip color="primary" selected="true">GLYCEMIC TOTAL CHARGE : {{totalCharge}}</mat-chip> <br>
+<mat-chip color="primary" fxLayoutAlign="center" selected="true">GLYCEMIC TOTAL CHARGE : {{totalCharge}}</mat-chip> <br>
 <button mat-raised-button color="accent" (click)="resetCharge()">Reset</button>
-
 
   <div>
     <input type="submit" value="Save to favorite meals">
   </div>
-
-
-
