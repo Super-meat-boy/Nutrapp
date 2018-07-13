@@ -19,4 +19,20 @@ table {
   .mat-chip {
     font-size: large;
     font-family:verdana, sans-serif;
+    height: 50px;
+    padding: 20px;
+    margin-top: 10px;
   }
+
+.error {
+  color: darkred;
+  margin-bottom: 15px;
+}
+
+.list {
+  margin-top: 40px;
+}
+
+.favmeals {
+  cursor: copy;
+}

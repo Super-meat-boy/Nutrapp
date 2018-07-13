@@ -23,36 +23,39 @@
     </mat-form-field>
   </form>
 
-  <input type="number" [(ngModel)]="selectedAliment.chargeGly" #ig placeholder="Glycemic index">
-    <br>
-    <br>
-  <input type="number" [(ngModel)]="selectedAliment.grammage" #grammage placeholder="Weight">
-    <br>
-    <br>
-  <input type="submit" value="Add an aliment"
-         (click)="add(selectedAliment.name,selectedAliment.chargeGly,selectedAliment.grammage)">
 
+  <mat-form-field class="chargegly">
+    <input matInput type="number" [(ngModel)]="selectedAliment.chargeGly" placeholder="Glycemic index" disabled>
+  </mat-form-field>
+
+  <mat-form-field class="weight">
+    <input matInput type="number" [(ngModel)]="selectedAliment.grammage" #grammage placeholder="Weight">
+  </mat-form-field>
 </div>
 
-  <ul>
+<ul class="list">
   <li *ngFor=" let alim of dataSource" >
     The glycemic charge of {{alim.name}} is {{alim.chargeGly}}
   </li>
 </ul>
-  <!--
-  [(ngModel)]="alimTest.name"
-  [(ngModel)]="alimTest.glycemie"
-  [(ngModel)]="alimTest.chargeGly"-->
-  <br>
-  <br>
-  <br>
 
-<mat-chip color="primary" fxLayoutAlign="center" selected="true">GLYCEMIC TOTAL CHARGE : {{totalCharge}}</mat-chip> <br>
-<button mat-raised-button color="accent" (click)="resetCharge()">Reset</button>
-
+<div>
+  <button mat-raised-button color="link"
+          (click)="add(selectedAliment.name,selectedAliment.chargeGly,selectedAliment.grammage)">*** LET'S NUTTRAPP THIS
+    SHIT ***
+  </button>
+  <div class="error">{{errormessage}}</div>
+  <mat-chip color="primary" fxLayoutAlign="center" selected="true">GLYCEMIC TOTAL CHARGE : {{totalCharge}}</mat-chip>
+  <br>
   <div>
-    <input type="submit" value="Save to favorite meals" (click)="create()"> 
+    <button mat-icon-button>
+      <mat-icon class="favmeals">add_circle_outline</mat-icon>
+    </button>
+    <span class="favmeals" (click)="create()">Save to favorite meals</span>
   </div>
+
+  <button mat-raised-button color="link" (click)="resetCharge()">Reset</button>
+</div>
 
 
 
