@@ -47,7 +47,7 @@ export class ListAlimentComponent implements OnInit {
            } else {
              this.selectedAliment = null;
            }
-          //this.selectedAliment = value;
+          // this.selectedAliment = value;
           console.log('this selected aliment', this.selectedAliment);
         }),
         map(value => typeof value === 'string' ? value : value.name),

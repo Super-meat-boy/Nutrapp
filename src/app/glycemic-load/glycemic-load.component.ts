@@ -25,6 +25,10 @@ export class GlycemicLoadComponent implements OnInit {
   constructor(private alimentService: AlimentService) {
   }
 
+  ngOnInit() {
+    this.refresh();
+  }
+
   calculTotalCharge() {
     let totalCharge = 0;
     this.dataSource.forEach(function addNumber(elt: Aliment) {
@@ -37,10 +41,6 @@ export class GlycemicLoadComponent implements OnInit {
   resetCharge() {
     this.dataSource = [];
     this.totalCharge = 0;
-  }
-
-  ngOnInit() {
-    this.refresh();
   }
 
   refresh() {
