@@ -23,7 +23,7 @@ export class GlycemicLoadComponent implements OnInit {
   options: Aliment[] = [];
   errormessage: string = '';
 
-  meal: Meals = {id: null, listeAliment: [], chargeGlyMeals: 0};
+  meal: Meals = {id: null, name: '', listeAliment: [], chargeGlyMeals: 0};
 
 
 
@@ -91,8 +91,8 @@ export class GlycemicLoadComponent implements OnInit {
   }
 
   create() {
-    this.meal.listeAliment = this.dataSource;
-    this.meal.chargeGlyMeals = this.totalCharge;
+    // this.meal.name = this.meal.name;
+    const meal: Meals = {id: null, name: this.meal.name, listeAliment: this.dataSource, chargeGlyMeals: this.totalCharge};
     this.mealsService.create(this.meal).subscribe( (meals) => {
       console.log('créé!');
       this.meal = meals;
