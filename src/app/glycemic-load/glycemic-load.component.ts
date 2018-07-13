@@ -75,7 +75,7 @@ export class GlycemicLoadComponent implements OnInit {
       this.calculTotalCharge();
       this.errormessage = '';
     } else {
-      this.errormessage = 'PAS BON';
+      this.errormessage = '********* Thanks for completing the fields *********';
     }
 
   }
