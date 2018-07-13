@@ -12,7 +12,7 @@
 
   <form class="example-form">
     <mat-form-field class="example-full-width">
-      <input type="text" placeholder="Assignee" [(ngModel)]="selectedAliment.name" #alim placeholder="Aliment" matInput
+      <input type="text" placeholder="Assignee" [(ngModel)]="selectedAliment" #alim placeholder="Aliment" matInput
              [formControl]="myControl"
              [matAutocomplete]="auto">
       <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
