@@ -52,10 +52,8 @@
   [(ngModel)]="alimTest.glycemie"
   [(ngModel)]="alimTest.chargeGly"-->
 
-
+<div>{{errormessage}}</div>
 <mat-chip color="primary" selected="true">GLYCEMIC TOTAL CHARGE : {{totalCharge}}</mat-chip> <br>
-
-
 <button mat-raised-button color="accent" (click)="resetCharge()">Reset</button>
 
 

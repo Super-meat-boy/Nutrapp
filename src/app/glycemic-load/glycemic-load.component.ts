@@ -19,6 +19,7 @@ export class GlycemicLoadComponent implements OnInit {
   filteredOptions: Observable<Aliment[]>;
   myControl = new FormControl();
   options: Aliment[] = [];
+  errormessage: string = '';
 
   //alimTest: Aliment = {id: null, name: '', grammage: 0, chargeGly: 0};
 
@@ -37,6 +38,8 @@ export class GlycemicLoadComponent implements OnInit {
   resetCharge() {
     this.dataSource = [];
     this.totalCharge = 0;
+    this.errormessage = '';
+    this.selectedAliment = {id: null, name: '', grammage: 0, chargeGly: 0};
   }
 
   ngOnInit() {
@@ -66,8 +69,15 @@ export class GlycemicLoadComponent implements OnInit {
   add(alim, ig, grammage) {
     console.log('add');
     console.log(alim);
-    this.dataSource.push({id: 7, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
-    this.calculTotalCharge();
+    if (alim, ig, grammage) {
+      this.dataSource.push({id: 7, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
+      this.selectedAliment = {id: null, name: '', grammage: 0, chargeGly: 0};
+      this.calculTotalCharge();
+      this.errormessage = '';
+    } else {
+      this.errormessage = 'PAS BON';
+    }
+
   }
 
   displayFn(aliment ?: Aliment): string | undefined {
