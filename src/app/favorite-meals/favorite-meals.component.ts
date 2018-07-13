@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { MealsService } from '../meals.service';
+import { Meals } from '../meals';
 
 @Component({
   selector: 'app-favorite-meals',
@@ -7,17 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoriteMealsComponent implements OnInit {
 
-  constructor() { }
+  // meals: Meals = {
+  //   Name: '',
+  //   ChargeGlyMeals: '',
+  // };
+
+  constructor(private mealsService: MealsService) { }
 
   ngOnInit() {
+
   }
-createMeals() {
+
+//       create() {
+//         this.mealsService.create(this.meals).subscribe( (meals) => {
+//           console.log('créé!');
+//           this.meals = meals;
+//           localStorage.profileId = meals.id;
+//         }, (err) => {
+//           console.log('error!', err);
+//         });
+// }
 
 }
-
-}
-
-
-
 
 
