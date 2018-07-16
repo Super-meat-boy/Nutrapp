@@ -4,8 +4,8 @@ import {Observable} from 'rxjs';
 import {AlimentService} from '../aliment.service';
 import {map, startWith, tap} from 'rxjs/operators';
 import {FormControl} from '@angular/forms';
-import { MealsService } from '../meals.service';
-import { Meals } from '../meals';
+import {MealsService} from '../meals.service';
+import {Meals} from '../meals';
 
 @Component({
   selector: 'app-glycemic-load',
@@ -73,7 +73,7 @@ export class GlycemicLoadComponent implements OnInit {
   }
 
   add(alim, ig, grammage) {
-    console.log('add');
+    console.log(grammage);
     console.log(alim);
     if (ig !== 0 && grammage !== undefined) {
       this.dataSource.push({id: 7, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
@@ -90,15 +90,9 @@ export class GlycemicLoadComponent implements OnInit {
     return aliment ? aliment.name : undefined;
   }
 
-  private _filter(name: string): Aliment[] {
-    const filterValue = name.toLowerCase();
-
-    return this.options.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
-  }
-
   create() {
-    this.meal.listeAliment = this.dataSource;
-    this.meal.chargeGlyMeals = this.totalCharge;
+    // this.meal.name = this.meal.name;
+    const meal: Meals = {id: null, name: this.meal.name, listeAliment: this.dataSource, chargeGlyMeals: this.totalCharge};
     this.mealsService.create(this.meal).subscribe( (meals) => {
       console.log('créé!');
       this.meal = meals;
@@ -106,6 +100,12 @@ export class GlycemicLoadComponent implements OnInit {
     }, (err) => {
       console.log('error!', err);
     });
+  }
+
+  private _filter(name: string): Aliment[] {
+    const filterValue = name.toLowerCase();
+
+    return this.options.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
   }
 
 }
