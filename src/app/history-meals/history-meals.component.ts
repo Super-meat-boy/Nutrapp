@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
   templateUrl: './history-meals.component.html',
   styleUrls: ['./history-meals.component.css']
 })
-export class HistoryMealsComponent{
+export class HistoryMealsComponent {
 
   displayedColumns = ['date', 'meal', 'menu', 'charge'];
     dataSource = ELEMENT_DATA;
@@ -44,4 +44,4 @@ export class HistoryMealsComponent{
     {date: '03 juillet 2018', meal: 'encas', menu: 'Une banane', charge: 4},
     {date: '03 juillet 2018', meal: 'diner', menu: 'salade avec 3 tomate, 1 oeuf, 300G de gruyere', charge: 21},
 
-  ]
+  ];

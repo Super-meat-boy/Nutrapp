@@ -23,7 +23,7 @@ export class GlycemicLoadComponent implements OnInit {
   options: Aliment[] = [];
   errormessage: string = '';
 
-  meal: Meals = {id: null, listeAliment: [], chargeGlyMeals: 0};
+  meal: Meals = {id: null, listeAliment: [], chargeGlyMeals: 0, name: ''};
 
 
 
@@ -75,7 +75,7 @@ export class GlycemicLoadComponent implements OnInit {
   add(alim, ig, grammage) {
     console.log('add');
     console.log(alim);
-    if (alim, ig, grammage) {
+    if (ig !== 0 && grammage !== undefined) {
       this.dataSource.push({id: 7, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
       this.selectedAliment = {id: null, name: '', grammage: 0, chargeGly: 0};
       this.calculTotalCharge();

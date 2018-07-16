@@ -4,6 +4,7 @@ import {Aliment} from '../aliment';
 import {Observable} from 'rxjs';
 import {FormControl} from '@angular/forms';
 import {map, tap, startWith} from 'rxjs/operators';
+import { Meals } from '../meals';
 
 
 
