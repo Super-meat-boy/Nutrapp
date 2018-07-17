@@ -23,9 +23,7 @@ export class GlycemicLoadComponent implements OnInit {
   options: Aliment[] = [];
   errormessage: string = '';
 
-  meal: Meals = {id: null, listeAliment: [], chargeGlyMeals: 0, name: ''};
-
-
+  meal: Meals = {id: null, menuComposition: [], chargeGlyMeals: 0, name: ''};
 
   // alimTest: Aliment = {id: null, name: '', grammage: 0, chargeGly: 0};
 
@@ -47,6 +45,7 @@ export class GlycemicLoadComponent implements OnInit {
 
   resetCharge() {
     this.dataSource = [];
+    console.log('resetCharge - Cleaning dataSource');
     this.totalCharge = 0;
     this.errormessage = '';
     this.selectedAliment = {id: null, name: '', grammage: 0, chargeGly: 0};
@@ -76,10 +75,11 @@ export class GlycemicLoadComponent implements OnInit {
     console.log(grammage);
     console.log(alim);
     if (ig !== 0 && grammage !== undefined) {
-      this.dataSource.push({id: 7, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
+      this.dataSource.push({id: null, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
       this.selectedAliment = {id: null, name: '', grammage: 0, chargeGly: 0};
       this.calculTotalCharge();
       this.errormessage = '';
+      console.log(this.dataSource);
     } else {
       this.errormessage = '********* Thanks for completing the fields *********';
     }
@@ -90,10 +90,13 @@ export class GlycemicLoadComponent implements OnInit {
     return aliment ? aliment.name : undefined;
   }
 
-  create() {
+  // Méthode de création du menu
+  create(name, menuComposition, chargeGlyMeals) {
     // this.meal.name = this.meal.name;
-    const meal: Meals = {id: null, name: this.meal.name, listeAliment: this.dataSource, chargeGlyMeals: this.totalCharge};
-    this.mealsService.create(this.meal).subscribe( (meals) => {
+    console.log(this.meal);
+    const localMeal: Meals = {id: null, name: this.meal.name, menuComposition: this.dataSource, chargeGlyMeals: this.totalCharge};
+    console.log(localMeal);
+    this.mealsService.create(localMeal).subscribe( (meals) => {
       console.log('créé!');
       this.meal = meals;
       localStorage.profileId = meals.id;

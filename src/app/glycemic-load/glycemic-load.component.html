@@ -28,16 +28,19 @@
     <input matInput type="number" [(ngModel)]="selectedAliment.chargeGly" placeholder="Glycemic index" disabled>
   </mat-form-field>
 
+ 
   <mat-form-field class="weight">
     <input matInput type="number" [(ngModel)]="selectedAliment.grammage" #grammage placeholder="Weight">
   </mat-form-field>
 </div>
+
 
 <ul class="list">
   <li *ngFor=" let alim of dataSource" >
     The glycemic charge of {{alim.name}} is {{alim.chargeGly}}
   </li>
 </ul>
+
 
 <div>
   <button mat-raised-button color="link"
@@ -54,7 +57,7 @@
     </button> -->
     
 
-    <button mat-raised-button color="link" (click)="create()">Save to Favorite Meals</button>
+    <button mat-raised-button color="link" (click)="create(meal.name,meal.menuComposition,meal.chargeGlyMeals)">Save to Favorite Meals</button>
     <input matInput type="text" placeholder="Name" [(ngModel)]="meal.name">
   </div>
 
