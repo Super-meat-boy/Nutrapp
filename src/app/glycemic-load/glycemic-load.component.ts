@@ -49,6 +49,7 @@ export class GlycemicLoadComponent implements OnInit {
     this.totalCharge = 0;
     this.errormessage = '';
     this.selectedAliment = {id: null, name: '', grammage: 0, chargeGly: 0};
+    this.meal.name = '';
   }
 
   refresh() {
@@ -98,8 +99,9 @@ export class GlycemicLoadComponent implements OnInit {
     console.log(localMeal);
     this.mealsService.create(localMeal).subscribe( (meals) => {
       console.log('créé!');
-      this.meal = meals;
+      //this.meal = meals;
       localStorage.profileId = meals.id;
+      this.resetCharge();
     }, (err) => {
       console.log('error!', err);
     });
