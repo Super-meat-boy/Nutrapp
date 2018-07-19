@@ -28,7 +28,7 @@
     <input matInput type="number" [(ngModel)]="selectedAliment.chargeGly" placeholder="Glycemic index" disabled>
   </mat-form-field>
 
- 
+
   <mat-form-field class="weight">
     <input matInput type="number" [(ngModel)]="selectedAliment.grammage" #grammage placeholder="Weight">
   </mat-form-field>
@@ -44,7 +44,8 @@
 
 <div>
   <button mat-raised-button color="link"
-          (click)="add(selectedAliment.name,selectedAliment.chargeGly,selectedAliment.grammage)">*** LET'S NUTTRAPP THIS
+          (click)="add(selectedAliment.id,selectedAliment.name,selectedAliment.chargeGly,selectedAliment.grammage)">***
+    LET'S NUTTRAPP THIS
     SHIT ***
   </button>
   <div class="error">{{errormessage}}</div>
@@ -55,7 +56,7 @@
     <!-- <button mat-icon-button>
       <mat-icon class="favmeals">add_circle_outline</mat-icon>
     </button> -->
-    
+
 
     <button mat-raised-button color="link" (click)="create(meal.name,meal.menuComposition,meal.chargeGlyMeals)">Save to Favorite Meals</button>
     <input matInput type="text" placeholder="Name" [(ngModel)]="meal.name">
@@ -68,7 +69,7 @@
 
 <div>
 
-  
+
 
 
 

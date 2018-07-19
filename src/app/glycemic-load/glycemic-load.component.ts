@@ -21,7 +21,7 @@ export class GlycemicLoadComponent implements OnInit {
   filteredOptions: Observable<Aliment[]>;
   myControl = new FormControl();
   options: Aliment[] = [];
-  errormessage: string = '';
+  errormessage = '';
 
   meal: Meals = {id: null, menuComposition: [], chargeGlyMeals: 0, name: ''};
 
@@ -72,12 +72,12 @@ export class GlycemicLoadComponent implements OnInit {
       );
   }
 
-  add(alim, ig, grammage) {
+  add(idAliment: number, alim: string, ig: number, grammage: number) {
     console.log(grammage);
     console.log(alim);
     if (ig !== 0 && grammage !== undefined) {
-      this.dataSource.push({id: null, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
-      this.selectedAliment = {id: null, name: '', grammage: 0, chargeGly: 0};
+      this.dataSource.push({id: idAliment, name: alim, glycemie: ig, grammage: grammage, chargeGly: (grammage * ig) / 100});
+      this.selectedAliment = {id: undefined, name: '', grammage: 0, chargeGly: 0};
       this.calculTotalCharge();
       this.errormessage = '';
       console.log(this.dataSource);

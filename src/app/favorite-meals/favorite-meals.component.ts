@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { MealsService } from '../meals.service';
-import { Meals } from '../meals';
+import {Component, OnInit} from '@angular/core';
+import {MealsService} from '../meals.service';
+import {Meals} from '../meals';
 
 @Component({
   selector: 'app-favorite-meals',
@@ -10,27 +9,20 @@ import { Meals } from '../meals';
 })
 export class FavoriteMealsComponent implements OnInit {
 
-  // meals: Meals = {
-  //   Name: '',
-  //   ChargeGlyMeals: '',
-  // };
+  favMeals: Meals [];
 
   constructor(private mealsService: MealsService) { }
 
   ngOnInit() {
+    this.displayMenus();
 
   }
 
-//       create() {
-//         this.mealsService.create(this.meals).subscribe( (meals) => {
-//           console.log('créé!');
-//           this.meals = meals;
-//           localStorage.profileId = meals.id;
-//         }, (err) => {
-//           console.log('error!', err);
-//         });
-// }
+  displayMenus() {
+    this.mealsService.displayMenus().subscribe((favMeals: Meals[]) => {
+      this.favMeals = favMeals;
 
+    });
+  }
 }
-
 

@@ -10,6 +10,10 @@
 <br>
 <br>
 
+<mat-option *ngFor="let option of favMeals | async" [value]="option">
+  {{option.name}}
+</mat-option>
+
 <div>
  <mat-tab-group class="favorite-meals">
    <mat-tab label="My First Menu">
