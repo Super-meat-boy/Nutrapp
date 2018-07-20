@@ -17,7 +17,7 @@ export class AlimentService {
 
   selectedAliment: Aliment;
 
-  API_URL = '/aliments'; // je mets l'url qui correspond au local host 8090/aliment
+  API_URL = '/api/aliments'; // je mets l'url qui correspond au local host 8090/aliment
 
   constructor(private http: HttpClient) {
   }

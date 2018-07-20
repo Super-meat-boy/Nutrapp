@@ -22,6 +22,8 @@ export class GlycemicLoadComponent implements OnInit {
   myControl = new FormControl();
   options: Aliment[] = [];
   errormessage = '';
+  errormessageMenu = '';
+
 
   meal: Meals = {id: null, menuComposition: [], chargeGlyMeals: 0, name: ''};
 
@@ -92,19 +94,22 @@ export class GlycemicLoadComponent implements OnInit {
   }
 
   // Méthode de création du menu
-  create(name, menuComposition, chargeGlyMeals) {
-    // this.meal.name = this.meal.name;
-    console.log(this.meal);
+  create(name: string, menuComposition: Aliment[], chargeGlyMeals: number) {
+    if (name !== '') {
+      console.log(this.meal);
     const localMeal: Meals = {id: null, name: this.meal.name, menuComposition: this.dataSource, chargeGlyMeals: this.totalCharge};
-    console.log(localMeal);
-    this.mealsService.create(localMeal).subscribe( (meals) => {
-      console.log('créé!');
-      //this.meal = meals;
-      localStorage.profileId = meals.id;
-      this.resetCharge();
-    }, (err) => {
-      console.log('error!', err);
-    });
+      console.log(localMeal);
+      this.mealsService.create(localMeal).subscribe((meals) => {
+        console.log('créé!');
+        //this.meal = meals;
+        localStorage.profileId = meals.id;
+        this.resetCharge();
+      }, (err) => {
+        console.log('error!', err);
+      });
+    } else {
+      this.errormessage = '********* Thanks for completing the fields *********';
+    }
   }
 
   private _filter(name: string): Aliment[] {

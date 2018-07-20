@@ -10,7 +10,7 @@ export class MealsService {
 
   selectedMeals: Meals;
 
-  API_URL = '/menu';
+  API_URL = '/api/menu';
 
   constructor(private http: HttpClient) {
   }

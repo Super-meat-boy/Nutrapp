@@ -33,6 +33,11 @@ table {
   margin-top: 40px;
 }
 
-.favMeals {
-  cursor: copy;
+.saveFavM {
+  display: flex;
+  align-items: center;
+}
+
+.mat-raised-button {
+  min-width: auto;
 }

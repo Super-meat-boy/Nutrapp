@@ -51,14 +51,10 @@
   <div class="error">{{errormessage}}</div>
   <mat-chip color="primary" fxLayoutAlign="center" selected="true">GLYCEMIC TOTAL CHARGE : {{totalCharge}}</mat-chip>
   <br>
-  <div>
 
-    <!-- <button mat-icon-button>
-      <mat-icon class="favmeals">add_circle_outline</mat-icon>
-    </button> -->
-
-
+  <div class="saveFavM">
     <button mat-raised-button color="link" (click)="create(meal.name,meal.menuComposition,meal.chargeGlyMeals)">Save to Favorite Meals</button>
+    <div class="error">{{errormessageMenu}}</div>
     <input matInput type="text" placeholder="Name" [(ngModel)]="meal.name">
   </div>
 
@@ -66,11 +62,5 @@
   <div>
   <button mat-raised-button color="link" (click)="resetCharge()">Reset</button>
   </div>
-
-<div>
-
-
-
-
 
 
