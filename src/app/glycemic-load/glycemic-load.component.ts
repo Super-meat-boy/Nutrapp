@@ -27,7 +27,6 @@ export class GlycemicLoadComponent implements OnInit {
 
   meal: Meals = {id: null, menuComposition: [], chargeGlyMeals: 0, name: ''};
 
-  // alimTest: Aliment = {id: null, name: '', grammage: 0, chargeGly: 0};
 
   constructor(private alimentService: AlimentService, private mealsService: MealsService) {
   }

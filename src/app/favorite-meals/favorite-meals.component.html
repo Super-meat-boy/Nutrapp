@@ -6,15 +6,15 @@
        src="https://lh3.googleusercontent.com/HR9erZZT8IOrkWF2bbs_QOGT2akpa2oSgqkaUIOOC4_g913Z9i3GZj1Bn4wYCOx2hss=w300">
 </div>
 
-<ul>
-  <mat-tab-group>
+
+<mat-tab-group>
     <mat-tab *ngFor="let favMeal of favMeals" label="{{favMeal.name}}"><br>
       <li *ngFor="let aliment of favMeal.menuComposition">{{aliment.name}}</li>
       <br>
       TOTAL GLYCEMIC CHARGE {{favMeal.chargeGlyMeals}}
     </mat-tab>
   </mat-tab-group>
-</ul>
+
 
 <!--<div>-->
 <!--<mat-tab-group class="favorite-meals">-->

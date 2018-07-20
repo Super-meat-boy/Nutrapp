@@ -1,9 +1,12 @@
-.favorite-meals{
-  line-height: 30px;
-  font-size: medium;
-  font-family: verdana, sans-serif;
-}
-
 .title{
     text-align: center;
 }
+
+mat-tab-label .mat-tab-label-content {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 40px;
+}
+
