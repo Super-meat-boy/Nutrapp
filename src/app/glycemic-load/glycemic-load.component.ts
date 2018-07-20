@@ -105,6 +105,7 @@ export class GlycemicLoadComponent implements OnInit {
           console.log('créé!');
           localStorage.profileId = meals.id;
           this.resetCharge();
+          this.errormessageMenu = '';
         }, (err) => {
           console.log('error!', err);
         });
