@@ -81,6 +81,7 @@ export class GlycemicLoadComponent implements OnInit {
       this.selectedAliment = {id: undefined, name: '', grammage: 0, chargeGly: 0};
       this.calculTotalCharge();
       this.errormessage = '';
+      this.errormessageMenu = '';
       console.log(this.dataSource);
     } else {
       this.errormessage = '********* Thanks for completing the fields *********';
@@ -94,20 +95,24 @@ export class GlycemicLoadComponent implements OnInit {
 
   // Méthode de création du menu
   create(name: string, menuComposition: Aliment[], chargeGlyMeals: number) {
-    if (name !== '') {
-      console.log(this.meal);
-    const localMeal: Meals = {id: null, name: this.meal.name, menuComposition: this.dataSource, chargeGlyMeals: this.totalCharge};
-      console.log(localMeal);
-      this.mealsService.create(localMeal).subscribe((meals) => {
-        console.log('créé!');
-        //this.meal = meals;
-        localStorage.profileId = meals.id;
-        this.resetCharge();
-      }, (err) => {
-        console.log('error!', err);
-      });
+    if (this.dataSource.length > 0) {
+      if (name !== '') {
+        console.log('toto');
+        console.log(this.meal);
+        const localMeal: Meals = {id: null, name: this.meal.name, menuComposition: this.dataSource, chargeGlyMeals: this.totalCharge};
+        console.log(localMeal);
+        this.mealsService.create(localMeal).subscribe((meals) => {
+          console.log('créé!');
+          localStorage.profileId = meals.id;
+          this.resetCharge();
+        }, (err) => {
+          console.log('error!', err);
+        });
+      } else {
+        this.errormessageMenu = '********* Thanks for giving a name to your menu *********';
+      }
     } else {
-      this.errormessage = '********* Thanks for completing the fields *********';
+      this.errormessageMenu = '********* Thanks for adding aliment *********';
     }
   }
 
